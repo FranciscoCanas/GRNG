@@ -139,7 +139,9 @@ namespace GRNG
          **/
         public double GetExpDouble(double alpha)
         {
-            return 0.0;
+            double u = random.NextDouble();
+
+            return Math.Log(1-u) / (-1.0 * alpha);
         }
 
         /** 
@@ -148,7 +150,7 @@ namespace GRNG
          **/
         public Vector3D GetExpVector3D(Vector3D alpha)
         {
-            return new Vector3D(0.0, 0.0, 0.0);
+            return new Vector3D(GetExpDouble(alpha.X), GetExpDouble(alpha.X), GetExpDouble(alpha.X));
         }
 
         /**
