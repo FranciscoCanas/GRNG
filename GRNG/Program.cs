@@ -42,6 +42,21 @@ namespace GRNG
             Console.WriteLine("Total: " + (totalExp));
             Console.WriteLine("Mean: " + GRandom.Mean(sampleExp, TEST_SIZE));
             Console.WriteLine("Variance: " + GRandom.variance(sampleExp, TEST_SIZE));
+
+            
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"D:\workspace\GRNG\GRNG\samples.txt"))
+            {
+                file.WriteLine("Normal:");
+                foreach (double x in sampleNorm)
+                {
+                    file.WriteLine(x);
+                }
+                file.WriteLine("Exponential:");
+                foreach (double x in sampleExp)
+                {
+                    file.WriteLine(x);
+                }
+            }
         }
     }
 }

@@ -15,7 +15,10 @@ namespace GRNG
             random = new Random();
         }
 
-
+        public int GetUniformInt(int min, int max)
+        {
+            return random.Next(min, max);
+        }
 
         /** 
          * Returns a random double from specified distribution.
